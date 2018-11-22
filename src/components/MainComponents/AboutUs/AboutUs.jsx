@@ -6,7 +6,7 @@ import Logo from "../../../logo/LogoRed.png";
 const About = () => {
   return (
     <div>
-      <div id="contact">
+      <div id="about">
         <div className="contact-box-lg">
           <div className="container">
             <div className="row">
@@ -24,7 +24,7 @@ const About = () => {
                 <div className="col-md-5">
                   <div id="contact-logo">
                     <a>
-                      <img src={Logo} alt="logo" className='image-fluid'/>
+                      <img src={Logo} alt="logo" className='fa-image-fluid'/>
                     </a>
                   </div>
                 </div>
