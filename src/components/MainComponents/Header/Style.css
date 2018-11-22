@@ -19,12 +19,13 @@
     line-height: 45px;
     text-transform: uppercase;
     margin-top: 150px;
+    font-weight: 900;
 }
 
 #header-statement h3 {
     font-family: Helvetica, sans-serif;
     color: #fff;
-    font-size: 45px;
+    font-size: 40px;
     margin-top: 30px;
 }
 
