@@ -48,7 +48,6 @@ class Navbar extends Component {
 
                 <div id="home-btn" className="col-md-2">
                   <a className="btn btn-outline-primary btn-sm" href="#">
-                    {" "}
                     Sign In
                   </a>
                 </div>
