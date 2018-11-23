@@ -11,7 +11,7 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div id='navbar'>
           <div className='white-nav-top'>
             <div id='main-nav' className="container-fluid">
               <div className="row navbar">
@@ -24,7 +24,7 @@ class Navbar extends Component {
                 <div className="col-md-8">
                   <ul className="nav justify-content-end">
                     <li className="nav-item">
-                      <a className="nav-link active" href="#home">
+                      <a className="nav-link active" href="navbar">
                         Home
                       </a>
                     </li>
