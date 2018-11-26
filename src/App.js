@@ -12,13 +12,17 @@ import Contact from './components/MainComponents/Contact/Contact';
 import CreateStory from './components/Pages/CreteStory';
 import PeopleStoryDetail from './components/Pages/PeopleStoryDetail';
 import CommentStory from './components/Pages/CommentStory';
+import Mystories from './components/Pages/PeopleStories';
+import MyStoryDetail from './components/Pages/MyStoryDetail';
+import UpdateStory from './components/Pages/UpdateStory';
+import MstoryDetail from './components/MainComponents/MstoryDetail/MstoryDetail';
 
 
 class App extends Component {
   render() {
     return (
       <div>
-        <HomePage />
+        <MyStoryDetail />
       </div>
     );
   }

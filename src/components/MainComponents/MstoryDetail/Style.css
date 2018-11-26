@@ -1,0 +1,16 @@
+#button-wrapper {
+    margin-left: 500px;
+
+}
+#button-wrapper #update-button {
+    display: inline-block;
+    padding: 5px;
+
+}
+
+#update-button .btn-outline-success {
+    border-radius: 5px;
+    padding: 5px 20px;
+    border-color: #3F4D66;
+    color: #3F4D66;
+}

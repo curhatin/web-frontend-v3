@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "../MainComponents/Navbar/Navbar";
+import UserNavbar from "../MainComponents/UserNavbar'"
+import Mstory from "../MainComponents/Mstory/Mstory";
 
 
 class Home extends Component {
@@ -11,9 +13,8 @@ class Home extends Component {
     return (
       <div>
         <Navbar />
+        <Mstory />
         <UserNavbar />
-        <Mstories />
-        
       </div>
     );
   }
