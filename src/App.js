@@ -16,14 +16,38 @@ import Mystories from './components/Pages/PeopleStories';
 import MyStoryDetail from './components/Pages/MyStoryDetail';
 import UpdateStory from './components/Pages/UpdateStory';
 import MstoryDetail from './components/MainComponents/MstoryDetail/MstoryDetail';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; 
+import axios from 'axios'
+import { Provider } from 'react-redux'
+import store from "./store"
 
 
 class App extends Component {
+
+  componentDidMount() {
+    if (localStorage.getItem("token")) {
+      this.setState({ isAuthenticated: true });
+    } else {
+      this.setState({ isAuthenticated: false });
+    }
+  }
+
+  
   render() {
     return (
-      <div>
-        <MyStoryDetail />
+      <Provider store={store}>
+      <Router >
+        <div>
+          <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/Login"  render={(props) => <Login {...props} />}/>
+          <Route exact path="/Register"  render={(props) => <Register {...props} />}   />
+          <Route exact path="/Share" render={(props) => <PeopleStories {...props} />} />
+          </Switch>
+   
       </div>
+      </Router>
+      </Provider>
     );
   }
 }

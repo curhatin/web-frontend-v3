@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Navbar/Style.css";
 import Logo from "../../../logo/LogoYellow.png";
+import { Link } from "react-router-dom"; 
 
 class Navbar extends Component {
   constructor(props) {
@@ -24,9 +25,9 @@ class Navbar extends Component {
                 <div className="col-md-8">
                   <ul className="nav justify-content-end">
                     <li className="nav-item">
-                      <a className="nav-link active" href="">
+                      <Link to="/" className="nav-link" >
                         Home
-                      </a>
+                      </Link>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#about">
@@ -34,9 +35,9 @@ class Navbar extends Component {
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#team">
+                      <Link className="nav-link" to="/Share">
                         Share
-                      </a>
+                      </Link>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#contact">
@@ -47,9 +48,9 @@ class Navbar extends Component {
                 </div>
 
                 <div id="home-btn" className="col-md-2">
-                  <a className="btn btn-outline-primary btn-sm" href="#">
+                  <Link  to='Login' className="btn btn-outline-primary btn-sm" >
                     Sign In
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
