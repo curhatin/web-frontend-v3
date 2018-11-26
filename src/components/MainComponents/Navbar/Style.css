@@ -1,7 +1,8 @@
 
 
-#nav {
-    background-color: black;
+#navbar {
+    overflow: hidden;
+
 }
 
 .white-nav-top {
@@ -15,7 +16,7 @@
     padding: 10px 0 10px 0;
 }
 
-ul.nav > li a {
+.white-nav-top ul.nav > li a {
     font-family: "Raleway", sans-serif;
     color: #f4c613;
     font-size: 13px;

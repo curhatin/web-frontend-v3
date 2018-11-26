@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../Navbar/Style.css";
+import "../UserNavbar/Style.css";
 import Logo from "../../../logo/LogoYellow.png";
 
-class Navbar extends Component {
+class UserNavbar extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -11,45 +11,42 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <div id='navbar' >
-          <div className='white-nav-top'>
-            <div id='main-nav' className="container">
+        <div id='UserNavbar'>
+          <div className='user-nav-top'>
+            <div id='main-nav' className="container-fluid">
               <div className="row navbar">
                 <div className="col-md-2 text-right">
-                  <a>
-                    <img src={Logo} alt="logo" />
-                  </a>
                 </div>
 
                 <div className="col-md-8">
                   <ul className="nav justify-content-end">
                     <li className="nav-item">
-                      <a className="nav-link active" href="">
-                        Home
+                      <a className="nav-link active" href="navbar">
+                        People stories
                       </a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#about">
-                        About Us
+                        My Stories
                       </a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="#team">
-                        Share
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" href="#contact">
-                        Contact Us
+                        Create Story
                       </a>
                     </li>
                   </ul>
                 </div>
 
-                <div id="home-btn" className="col-md-2">
-                  <a className="btn btn-outline-primary btn-sm" href="#">
-                    Sign In
-                  </a>
+                <div id="search-input" className="col-md-2">
+                <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="name"
+                              placeholder="Search ..... "
+                            />
+                          </div>
                 </div>
               </div>
             </div>
@@ -60,4 +57,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default UserNavbar;

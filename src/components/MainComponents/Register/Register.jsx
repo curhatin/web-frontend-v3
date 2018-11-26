@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Style.css";
 
-class Login extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -16,16 +16,16 @@ class Login extends Component {
               <div className="row">
                 <div className="col-md-4" />
                 <div className="col-md-8">
-                  <div id="login-right">
+                  <div id="register-right">
                     <div id='login-form'>
                       <a href='#'>
                         <p>HOME</p>
                       </a>
                       <h4>
                         {" "}
-                        Sign in to <span>CURHATIN!</span>{" "}
+                        Get <span>STARTED</span>{" "} <br/>
                       </h4>
-                      <p>Enter your detail below!</p>
+                      <p>It's all free</p>
                       <div className="row">
                         <div className="col-md-12">
                           <div class="form-group">
@@ -33,7 +33,7 @@ class Login extends Component {
                               type="text"
                               class="form-control"
                               id="name"
-                              placeholder="Email..."
+                              placeholder="Full name"
                             />
                           </div>
                         </div>
@@ -43,24 +43,35 @@ class Login extends Component {
                               type="text"
                               class="form-control"
                               id="name"
-                              placeholder="Password.."
+                              placeholder="Email"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-12">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="name"
+                              placeholder="Password"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-12">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="name"
+                              placeholder="Confirm Password"
                             />
                           </div>
                         </div>
                       </div>
                       <div id="login-btn">
                         <button type="button" className="btn btn-outline-secondary">
-                          Sign In
+                          Sign Up
                         </button>
-                      </div>
-
-                      <div id="login-register-box">
-                        <p> Sign Up?</p>
-                        <div id="login-register-btn">
-                          <button type="button" className="btn btn-outline-secondary">
-                            Click here
-                          </button>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -74,4 +85,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Register;

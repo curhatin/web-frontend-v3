@@ -20,11 +20,14 @@ const About = () => {
                     from people that you don't know who they are
                   </p>
                 </div>
+                <div id="comment-content">
+                          <textarea type="text" placeholder="Your stories" />
+                        </div>
 
                 <div className="col-md-5">
                   <div id="contact-logo">
                     <a>
-                      <img src={Logo} alt="logo" className='fa-image-fluid'/>
+                      <img src={Logo} alt="logo" className='image-fluid'/>
                     </a>
                   </div>
                 </div>

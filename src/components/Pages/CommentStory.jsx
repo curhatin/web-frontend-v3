@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
 import Navbar from '../MainComponents/Navbar/Navbar';
 import UserNavbar from '../MainComponents/UserNavbar/UserNavbar';
-import PstoryDetail from '../MainComponents/PstoryDetail/PstoryDetail';
+import Comment from '../MainComponents/Comment/Comment'
 
-class PeopleStoryDetail extends Component {
+class CommentStory extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
     render() { 
-        return (  
+        return ( 
             <div>
+
                 <Navbar />
                 <UserNavbar />
-                <PstoryDetail />
+                <Comment />
+                
+
             </div>
          );
     }
 }
  
-export default PeopleStoryDetail;
+export default CommentStory;
