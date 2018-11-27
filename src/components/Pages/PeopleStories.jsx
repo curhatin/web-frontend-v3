@@ -20,7 +20,7 @@ class PeopleStories extends Component {
     }
   };
   componentDidMount(){
-    this.props.fetchDataPost(localStorage.token);
+    // this.props.fetchDataPost(localStorage.token);
 }
   render() {
   

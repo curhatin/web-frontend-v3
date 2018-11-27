@@ -12,6 +12,7 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <Navbar/>
         <UserNavbar />
         <Mstory />
         

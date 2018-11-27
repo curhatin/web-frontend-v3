@@ -1,6 +1,7 @@
 import {
     LOGIN_AUTH,
-    LOG_OUT
+    LOG_OUT,
+    FETCH_DATA_POST
 } from "./types"
 import axios from "axios";
 
@@ -17,6 +18,16 @@ export const login = ({email, password}) => (dispatch) => {
                 payload: res.data.token
             })
             localStorage.token = res.data.token
+            axios.get('https://curhatin.herokuapp.com/post',{headers: {
+        authorization: `Bearer ${res.data.token}`
+        }})
+    .then(res => 
+     {  console.log(res.data)
+        dispatch({
+        type: FETCH_DATA_POST,
+        payload: res.data
+    })})
+    .catch(err => console.log(err))
         }
         
     })

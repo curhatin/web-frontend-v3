@@ -4,6 +4,7 @@ import "./Style.css";
 import { Link, withRouter } from 'react-router-dom'
 import {connect} from 'react-redux'
 import {login} from '../../../actions/authActions'
+import {fetchDataPost} from '../../../actions/postActions'
 
 
 class Login extends Component {
@@ -21,6 +22,7 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password
     })
+    // await this.props.fetchDataPost(localStorage.token);
       // this   .props.history.push("/Share");
       
   }
@@ -119,4 +121,4 @@ const mapStateToProps = state => ({
   token : state.auth.token
 })
 
-export default withRouter(connect(mapStateToProps,{login})(Login))
+export default withRouter(connect(mapStateToProps,{login,fetchDataPost})(Login))
