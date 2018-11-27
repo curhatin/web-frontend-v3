@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Mstory/Style.css"
 
+
 class Mstory extends Component {
   constructor(props) {
     super(props);

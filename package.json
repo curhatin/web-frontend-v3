@@ -17,7 +17,8 @@
     "react-sticky": "^6.0.3",
     "redux": "^4.0.1",
     "redux-history-push-middleware": "^0.1.2",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "time-ago": "^0.2.1"
   },
   "scripts": {
     "start": "react-scripts start",

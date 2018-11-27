@@ -1,9 +1,9 @@
 import {
-    ADD_CURHAT
+    ADD_CURHAT, FETCH_DATA_POST
 } from '../actions/types'
 
 const initialState = {
-    post_List : [],
+    post_list : [],
     new_post: {}
 }
 
@@ -13,6 +13,12 @@ export default function(state = initialState, action){
             return {
                 ...state,
                 new_post: action.payload
+            }
+            case FETCH_DATA_POST : 
+            console.log(action.payload)
+            return {
+                ...state,
+                post_list: action.payload
             }
             default:
             return state

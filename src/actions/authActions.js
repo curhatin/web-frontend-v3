@@ -1,6 +1,6 @@
 import {
     LOGIN_AUTH,
-    OUT_AUTH
+    LOG_OUT
 } from "./types"
 import axios from "axios";
 
@@ -35,6 +35,13 @@ export const cekToken = (token) => (dispatch) => {
     dispatch({
         type: LOGIN_AUTH,
         payload: token
+    })
+}
+
+export const logOut = () => (dispatch) => {
+    dispatch({
+        type: LOG_OUT,
+        isAuthenticated: false
     })
 }
 

@@ -4,7 +4,7 @@ import "../Navbar/Style.css";
 import Logo from "../../../logo/LogoYellow.png";
 import { Link } from "react-router-dom"; 
 import {connect} from 'react-redux'
-import { login } from '../../../actions/authActions'
+import { login, logOut } from '../../../actions/authActions'
 
 class Navbar extends Component {
   constructor(props) {
@@ -53,6 +53,7 @@ class Navbar extends Component {
             <div id="home-btn" className="col-md-2">
             <Link  to='/' className="btn btn-outline-primary btn-sm" onClick={() => {
                   localStorage.removeItem("token");
+                  this.props.logOut()
                 }}> 
               Log Out
             </Link>
@@ -78,4 +79,4 @@ const mapStateToProps = state => ({
   isAuthenticated : state.auth.isAuthenticated
 })
 
-export default connect(mapStateToProps,{login})(Navbar)
+export default connect(mapStateToProps,{login,logOut})(Navbar)

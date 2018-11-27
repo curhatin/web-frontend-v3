@@ -1,5 +1,6 @@
 import {
-    ADD_CURHAT
+    ADD_CURHAT,
+    FETCH_DATA_POST
 } from "./types"
 import axios from "axios";
 
@@ -20,4 +21,19 @@ export const createCurhat = data => dispatch => {
         payload: data
     })})
     .catch(err => console.log(err))
+}
+
+
+export const fetchDataPost = token => (dispatch) => {
+    axios.get('https://curhatin.herokuapp.com/post',{headers: {
+        authorization: `Bearer ${token}`
+        }})
+    .then(res => 
+     {  console.log(res.data)
+        dispatch({
+        type: FETCH_DATA_POST,
+        payload: res.data
+    })})
+    .catch(err => console.log(err))
+    
 }

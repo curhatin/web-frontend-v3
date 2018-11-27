@@ -48,8 +48,9 @@ class App extends Component {
           <Route exact path="/Share" render={(props) => <PeopleStories {...props} />} />
           <Route exact path="/Mystories" render={(props) => <Mystories {...props} />} />
           <Route exact path="/CreateStory" render={(props) => <CreateStory {...props} />} />
+          <Route exact path="/MstoryDetail" render={(props) => <MstoryDetail {...props} />} />
           </Switch>
-   
+          
       </div>
       </Router>
       </Provider>

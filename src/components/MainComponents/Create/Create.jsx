@@ -9,7 +9,7 @@ class Create extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tagId: 1,
+      tagId: '',
       post: '',
       topic: ''
     };
@@ -21,6 +21,11 @@ class Create extends Component {
     })
     
 }
+handleClick = id => {
+  this.setState({
+    tagId: id
+  })
+}
 
 handleSubmit = async () => {
  await this.props.createCurhat({
@@ -29,7 +34,8 @@ handleSubmit = async () => {
       topic: this.state.topic,
       token: this.props.token
   })
-  this.props.history.push("/Mystories");
+  console.log(this.state.tagId)
+  //this.props.history.push("/Mystories");
 }
   render() {
     return (
@@ -63,22 +69,22 @@ handleSubmit = async () => {
                             </div>
                             <div className="col-md-10">
                               <div id="create-catagories">
-                                <a href="#">
-                                  <p> Education</p>
+                                <a  href="#" onClick={() => this.handleClick(1)}>
+                                  <p  > Education</p>
                                 </a>
-                                <a href="#">
+                                <a  href="#" onClick={() => this.handleClick(2)}>
                                   <p> Sex </p>
                                 </a>
-                                <a href="#">
+                                <a   href="#" onClick={() => this.handleClick(3)}>
                                   <p> Social life </p>
                                 </a>
-                                <a href="#">
+                                <a  href="#" onClick={() => this.handleClick(4)}>
                                   <p> Religion </p>
                                 </a>
-                                <a href="#">
+                                <a href="#" onClick={() => this.handleClick(5)}>
                                   <p> Health </p>
                                 </a>
-                                <a href="#">
+                                <a href="#" onClick={() => this.handleClick(6)}>
                                   <p> Others </p>
                                 </a>
                               </div>
