@@ -1,6 +1,6 @@
 import {
     LOGIN_AUTH,
-    ADD_USER
+    OUT_AUTH
 } from "./types"
 import axios from "axios";
 
@@ -10,11 +10,15 @@ export const login = ({email, password}) => (dispatch) => {
         password
     })
     .then(res => {
-        dispatch({
-            type: LOGIN_AUTH,
-            payload: res.data.token
-        })
-        localStorage.token = res.data.token
+        console.log(res)
+        if(res.data.token){
+            dispatch({
+                type: LOGIN_AUTH,
+                payload: res.data.token
+            })
+            localStorage.token = res.data.token
+        }
+        
     })
     .catch(err => console.log(err))
 }

@@ -4,7 +4,7 @@ import "../Navbar/Style.css";
 import Logo from "../../../logo/LogoYellow.png";
 import { Link } from "react-router-dom"; 
 import {connect} from 'react-redux'
-import {login} from '../../../actions/authActions'
+import { login } from '../../../actions/authActions'
 
 class Navbar extends Component {
   constructor(props) {
@@ -64,12 +64,6 @@ class Navbar extends Component {
             </Link>
           </div>
           )}
-
-                  {/* <div id="home-btn" className="col-md-2">
-                  <Link  to='Login' className="btn btn-outline-primary btn-sm" >
-                    Sign In
-                  </Link>
-                </div> */}
                 
               </div>
             </div>

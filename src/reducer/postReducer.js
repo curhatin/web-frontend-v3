@@ -1,34 +1,21 @@
 import {
-    LOGIN_AUTH,
+    ADD_CURHAT
 } from '../actions/types'
 
 const initialState = {
-    isAuthenticated: false
-
+    post_List : [],
+    new_post: {}
 }
 
 export default function(state = initialState, action){
     switch(action.type){
-        case LOGIN_AUTH : 
+        case ADD_CURHAT : 
             return {
                 ...state,
-                isAuthenticated: true,
-                token: action.payload
+                new_post: action.payload
             }
-
             default:
             return state
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 

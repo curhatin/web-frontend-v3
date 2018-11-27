@@ -12,7 +12,8 @@ import rootReducer from "./reducer"
 const initialState = {
     auth: {
         isAuthenticated: false
-    }
+    },
+    post: {}
 }
 const middleware = [thunk]
 // const history = createBrowserHistory()

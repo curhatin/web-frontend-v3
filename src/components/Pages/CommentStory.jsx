@@ -12,7 +12,7 @@ class CommentStory extends Component {
         return ( 
             <div>
 
-                <Navbar />
+            
                 <UserNavbar />
                 <Comment />
                 
