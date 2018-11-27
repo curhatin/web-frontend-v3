@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Navbar/Style.css";
 import Logo from "../../../logo/LogoYellow.png";
 import { Link } from "react-router-dom"; 
+import {connect} from 'react-redux'
+import {login} from '../../../actions/authActions'
 
 class Navbar extends Component {
   constructor(props) {
@@ -47,11 +49,28 @@ class Navbar extends Component {
                   </ul>
                 </div>
 
-                <div id="home-btn" className="col-md-2">
+                 {this.props.isAuthenticated ? (
+            <div id="home-btn" className="col-md-2">
+            <Link  to='/' className="btn btn-outline-primary btn-sm" onClick={() => {
+                  localStorage.removeItem("token");
+                }}> 
+              Log Out
+            </Link>
+          </div>
+          ) : (
+            <div id="home-btn" className="col-md-2">
+            <Link  to='/Login' className="btn btn-outline-primary btn-sm" >
+              Sign In
+            </Link>
+          </div>
+          )}
+
+                  {/* <div id="home-btn" className="col-md-2">
                   <Link  to='Login' className="btn btn-outline-primary btn-sm" >
                     Sign In
                   </Link>
-                </div>
+                </div> */}
+                
               </div>
             </div>
           </div>
@@ -61,4 +80,8 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+const mapStateToProps = state => ({
+  isAuthenticated : state.auth.isAuthenticated
+})
+
+export default connect(mapStateToProps,{login})(Navbar)

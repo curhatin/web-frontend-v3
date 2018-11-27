@@ -12,7 +12,8 @@ export default function(state = initialState, action){
         case LOGIN_AUTH : 
             return {
                 ...state,
-                isAuthenticated: true
+                isAuthenticated: true,
+                token: action.payload
             }
             default:
             return state

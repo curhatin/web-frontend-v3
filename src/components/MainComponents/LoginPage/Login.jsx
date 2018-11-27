@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Style.css";
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import {connect} from 'react-redux'
 import {login} from '../../../actions/authActions'
 
@@ -16,19 +16,27 @@ class Login extends Component {
     this.onChange = this.onChange.bind(this);
   }
 
-  handleSubmit = () => {
-    this.props.login({
+  handleSubmit = async () => {
+    await this.props.login({
       email: this.state.email,
       password: this.state.password
-       
     })
-}
-   
+      // this   .props.history.push("/Share");
+      
+  }
+
+  renderRedirect = () => {
+    if (this.props.isAuthenticated === true) {
+     this.props.history.push("/Share");
+    }
+  };
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
   render() {
+    this.renderRedirect()   
+ 
     return (
       <div>
         <div id="login">
@@ -106,5 +114,9 @@ class Login extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  isAuthenticated : state.auth.isAuthenticated,
+  token : state.auth.token
+})
 
-export default connect(null,{login})(Login)
+export default withRouter(connect(mapStateToProps,{login})(Login))

@@ -20,13 +20,16 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from 'axios'
 import { Provider } from 'react-redux'
 import store from "./store"
+import {cekToken} from "./actions/authActions"
+import {connect} from 'react-redux'
+
 
 
 class App extends Component {
 
   componentDidMount() {
     if (localStorage.getItem("token")) {
-      this.setState({ isAuthenticated: true });
+      this.props.cekToken(localStorage.getItem("token"))
     } else {
       this.setState({ isAuthenticated: false });
     }
@@ -43,6 +46,8 @@ class App extends Component {
           <Route exact path="/Login"  render={(props) => <Login {...props} />}/>
           <Route exact path="/Register"  render={(props) => <Register {...props} />}   />
           <Route exact path="/Share" render={(props) => <PeopleStories {...props} />} />
+          <Route exact path="/Mystories" render={(props) => <Mystories {...props} />} />
+          <Route exact path="/CreateStory" render={(props) => <CreateStory {...props} />} />
           </Switch>
    
       </div>
@@ -52,4 +57,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null,{cekToken})(App)

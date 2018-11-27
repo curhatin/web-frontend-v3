@@ -12,9 +12,9 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Navbar />
-        <Mstory />
         <UserNavbar />
+        <Mstory />
+        
       </div>
     );
   }

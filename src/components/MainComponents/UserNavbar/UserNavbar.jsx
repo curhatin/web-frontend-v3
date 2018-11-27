@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../UserNavbar/Style.css";
+import {Link} from 'react-router-dom'
 import Logo from "../../../logo/LogoYellow.png";
 
 class UserNavbar extends Component {
@@ -21,19 +22,19 @@ class UserNavbar extends Component {
                 <div className="col-md-8">
                   <ul className="nav justify-content-end">
                     <li className="nav-item">
-                      <a className="nav-link active" href="navbar">
+                      <Link to="Share" className="nav-link active" >
                         People stories
-                      </a>
+                      </Link>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#about">
+                      <Link  to="Mystories" className="nav-link" href="#about">
                         My Stories
-                      </a>
+                      </Link>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="#team">
+                      <Link to="CreateStory" className="nav-link" href="#team">
                         Create Story
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
