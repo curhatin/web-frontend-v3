@@ -55,6 +55,18 @@ class MstoryDetail extends Component {
                           <hr />
                         </div>
                       </div>
+                      <div id="button-wrapper">
+                        <div id="update-button">
+                          <button type="submit" className="btn-outline-success">
+                            Update
+                          </button>
+                        </div>
+                        <div id="update-button">
+                          <button type="submit" className="btn-outline-success">
+                            Delete
+                          </button>
+                        </div>
+                      </div>
 
 { this.props.post_detail && this.props.post_detail[`posts-comments`].map((commentData,index)=> (
 
@@ -77,18 +89,8 @@ class MstoryDetail extends Component {
                       ))}
 
 
-                      <div id="button-wrapper">
-                        <div id="update-button">
-                          <button type="submit" className="btn-outline-success">
-                            Update
-                          </button>
-                        </div>
-                        <div id="update-button">
-                          <button type="submit" className="btn-outline-success">
-                            Delete
-                          </button>
-                        </div>
-                        <div id="update-button">
+                      <div id="button-wrapper-2">
+                        <div id="update-button-2">
                           <button type="submit" className="btn-outline-success">
                             Comment
                           </button>
@@ -108,7 +110,7 @@ class MstoryDetail extends Component {
                     </div>
                     <div id="topic-catagories">
                       <div className="topic-category">
-                      login                        <a href="#">
+                        <a href="#">
                           <p>EDUCATION</p>
                         </a>
                       </div>
