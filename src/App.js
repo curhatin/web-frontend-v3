@@ -12,16 +12,16 @@ import Contact from './components/MainComponents/Contact/Contact';
 import CreateStory from './components/Pages/CreteStory';
 import PeopleStoryDetail from './components/Pages/PeopleStoryDetail';
 import CommentStory from './components/Pages/CommentStory';
-import Mystories from './components/Pages/PeopleStories';
 import MyStoryDetail from './components/Pages/MyStoryDetail';
 import UpdateStory from './components/Pages/UpdateStory';
-import MstoryDetail from './components/MainComponents/MstoryDetail/MstoryDetail';
+import MstoryDetail from './components/MainComponents/MstoryDetail/MstoryDetail'; 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"; 
 import axios from 'axios'
 import { Provider } from 'react-redux'
 import store from "./store"
 import {cekToken} from "./actions/authActions"
 import {connect} from 'react-redux'
+import Mystories from './components/Pages/MyStories'
 
 
 
@@ -47,8 +47,11 @@ class App extends Component {
           <Route exact path="/Register"  render={(props) => <Register {...props} />}   />
           <Route exact path="/Share" render={(props) => <PeopleStories {...props} />} />
           <Route exact path="/Mystories" render={(props) => <Mystories {...props} />} />
+          <Route exact path="/MyStoryDetail" render={(props) => <MyStoryDetail {...props} />} />
+          <Route exact path="/PeopleStoryDetail" render={(props) => <PeopleStoryDetail {...props} />} />
           <Route exact path="/CreateStory" render={(props) => <CreateStory {...props} />} />
           <Route exact path="/MyStoryDetail/:id" render={(props) => <MyStoryDetail {...props} />} />
+          <Route exact path="/PeopleStories" render={(props) => <PeopleStories {...props} />} />
           </Switch>
           
       </div>

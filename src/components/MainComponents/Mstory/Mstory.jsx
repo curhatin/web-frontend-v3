@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Mstory/Style.css"
+import timeAgo  from 'time-ago'
+import {Link} from 'react-router-dom'
+
 
 
 class Mstory extends Component {
@@ -20,8 +23,8 @@ class Mstory extends Component {
                       <div id="comment-wrapper">
                         <div className="col-md-12">
                           <div id="comment-notif">
-                            <p> 100 comments</p>
-                            <p> 10 minutes ago</p>
+                            <p> {this.props.commentlength} comments</p>
+                            <p> {timeAgo.ago(new Date(this.props.date))}</p>
                           </div>
                         </div>
                         <div className="col-md-12">
@@ -29,20 +32,14 @@ class Mstory extends Component {
                             <div id="comment-title">
                               <a href="#">
                                 <h5>
-                                  <strong>Makan bang</strong>
+                                  <strong>{this.props.topic}</strong>
                                 </h5>
                               </a>
                             </div>
                             <hr />
                             <div id="comment-content">
                               <p>
-                                {" "}
-                                Lorem ipsum dolor sit amet consectetur,
-                                adipisicing elit. Laboriosam, corrupti
-                                voluptate. Facere vel autem, sequi asperiores
-                                inventore facilis qui cum odit. Molestiae
-                                praesentium ipsam saepe tenetur fugiat dolorem!
-                                Magni, fugit?{" "}
+                              {this.props.post}
                               </p>
                             </div>
                           </div>

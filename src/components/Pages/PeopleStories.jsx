@@ -20,10 +20,12 @@ class PeopleStories extends Component {
     }
   };
   componentDidMount(){
-    // this.props.fetchDataPost(localStorage.token);
-}
+    if(this.props.token){
+      this.props.fetchDataPost(localStorage.token);
+    }
+    
+  }
   render() {
-  
     this.renderRedirect()   
     return (
       <div>
@@ -41,7 +43,8 @@ class PeopleStories extends Component {
 
 const mapStateToProps = state => ({
   isAuthenticated : state.auth.isAuthenticated,
-  post_list : state.post.post_list
+  post_list : state.post.post_list,
+  token: state.auth.token
 })
 
 export default connect(mapStateToProps,{login,fetchDataPost})(PeopleStories)

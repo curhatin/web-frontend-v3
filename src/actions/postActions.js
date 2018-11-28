@@ -1,7 +1,8 @@
 import {
     ADD_CURHAT,
     FETCH_DATA_POST,
-    FETCH_DATA_POST_BY_ID
+    FETCH_DATA_POST_BY_ID,
+    FETCH_DATA_POST_USER_BY_ID
 } from "./types"
 import axios from "axios";
 
@@ -39,14 +40,28 @@ export const fetchDataPost = token => (dispatch) => {
     
 }
 
-export const fetchDataPostById = (token, id) => (dispatch) => {
+export const fetchDataPostById = (token) => (dispatch) => {
+    axios.get(`https://curhatin.herokuapp.com/post/account-id`,{headers: {
+        authorization: `Bearer ${token}`
+        }})
+    .then(res => 
+     {  console.log(res.data)
+        dispatch({
+        type: FETCH_DATA_POST_USER_BY_ID,
+        payload: res.data
+    })})
+    .catch(err => console.log(err))
+    
+}
+
+export const fetchDataPostUserById = (token, id) => (dispatch) => {
     axios.get(`https://curhatin.herokuapp.com/post/${id}`,{headers: {
         authorization: `Bearer ${token}`
         }})
     .then(res => 
      {  console.log(res.data)
         dispatch({
-        type: FETCH_DATA_POST_BY_ID,
+        type: FETCH_DATA_POST_USER_BY_ID,
         payload: res.data
     })})
     .catch(err => console.log(err))

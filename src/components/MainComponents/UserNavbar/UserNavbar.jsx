@@ -22,17 +22,17 @@ class UserNavbar extends Component {
                 <div className="col-md-8">
                   <ul className="nav justify-content-end">
                     <li className="nav-item">
-                      <Link to="Share" className="nav-link active" >
+                      <Link to="/PeopleStories" className="nav-link active" >
                         People stories
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link  to="Mystories" className="nav-link" href="#about">
+                      <Link  to="/Mystories" className="nav-link" href="#about">
                         My Stories
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link to="CreateStory" className="nav-link" href="#team">
+                      <Link to="/CreateStory" className="nav-link" href="#team">
                         Create Story
                       </Link>
                     </li>

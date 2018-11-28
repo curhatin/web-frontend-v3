@@ -29,13 +29,13 @@ class Pstories extends Component {
                       <div className="col-md-12">
                         <div id="comment-box">
                           <div id="comment-title">
-                            <a href="#">
+                            
                               <h5>
-                                <Link to={`/MyStoryDetail/${this.props.id}`}>
+                              {/* {`/PeopleStoryDetail/${this.props.id}`} */}
+                                <Link to="/PeopleStoryDetail" >
                                 <strong >{this.props.topic}</strong>
                                 </Link>
                               </h5>
-                            </a>
                           </div>
                           <hr />
                           <div id="comment-content">
