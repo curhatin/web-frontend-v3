@@ -15,12 +15,12 @@ const middleware = [thunk]
 // const history = createBrowserHistory()
 // const reduxHistoryPush = reduxHistoryPushMiddleware(history, { matcher: '_FULFILLED$' });
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
   rootReducer,
   initialState,
-  compose(applyMiddleware(...middleware)),
-  // applyMiddleware(reduxHistoryPush),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  /* preloadedState, */
+  composeEnhancers(applyMiddleware(...middleware))
 )
 
 export default store
