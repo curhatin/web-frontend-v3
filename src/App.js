@@ -48,7 +48,7 @@ class App extends Component {
           <Route exact path="/Share" render={(props) => <PeopleStories {...props} />} />
           <Route exact path="/Mystories" render={(props) => <Mystories {...props} />} />
           <Route exact path="/CreateStory" render={(props) => <CreateStory {...props} />} />
-          <Route exact path="/MyStoryDetail" render={(props) => <MyStoryDetail {...props} />} />
+          <Route exact path="/MyStoryDetail/:id" render={(props) => <MyStoryDetail {...props} />} />
           </Switch>
           
       </div>

@@ -1,10 +1,21 @@
 import React, { Component } from "react";
 import '../MstoryDetail/Style.css'
+import {connect} from 'react-redux'
+import {login} from '../../../actions/authActions'
+import { fetchDataPostById } from '../../../actions/postActions'
+import timeAgo  from 'time-ago'
+import {Link} from 'react-router-dom'
+import { fetchDataCommentsByPostId } from '../../../actions/commentsActions'
+
 
 class MstoryDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+  }
+  componentDidMount(){
+    this.props.fetchDataPostById(localStorage.token, this.props.id)
+    
   }
   render() {
     return (
@@ -19,55 +30,53 @@ class MstoryDetail extends Component {
                       <div id="comment-wrapper">
                         <div className="col-md-12">
                           <div id="comment-notif">
-                            <p> 100 comments</p>
-                            <p> 10 minutes ago</p>
+                            <p> {this.props.post_detail &&  this.props.post_detail[`posts-comments`].length} comments </p>
+                            <p> {timeAgo.ago(new Date(this.props.post_detail &&  this.props.post_detail.createdAt))}</p>
                           </div>
                         </div>
+
                         <div className="col-md-12">
                           <div id="comment-box">
                             <div id="comment-title">
                               <a href="#">
                                 <h5>
-                                  <strong>Makan bang</strong>
+                                  
+                                  <strong>{this.props.post_detail &&  this.props.post_detail.topic}</strong>
                                 </h5>
                               </a>
                             </div>
                             <hr />
                             <div id="comment-content">
                               <p>
-                                {" "}
-                                Lorem ipsum dolor sit amet consectetur,
-                                adipisicing elit. Laboriosam, corrupti
-                                voluptate. Facere vel autem, sequi asperiores
-                                inventore facilis qui cum odit. Molestiae
-                                praesentium ipsam saepe tenetur fugiat dolorem!
-                                Magni, fugit?{" "}
+                              {this.props.post_detail &&  this.props.post_detail.post}
                               </p>
                             </div>
                           </div>
                           <hr />
                         </div>
                       </div>
-                      <div id="other-comment-box">
+
+{ this.props.post_detail && this.props.post_detail[`posts-comments`].map((commentData,index)=> (
+
+                      <div id="other-comment-box" key={index}>
                         <div id="comment-title">
-                          <a href="#">
-                            <h5>
-                              <strong>Makan bang</strong>
-                            </h5>
-                          </a>
+                        <div id="comment-notif">
+                            
+                            <p>{timeAgo.ago(new Date(commentData.comment.createdAt ))}</p>
+                          </div>
                         </div>
-                        <hr />
+                      
                         <div id="comment-content">
                           <p>
-                            {" "}
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Laboriosam, corrupti voluptate. Facere vel
-                            autem, sequi asperiores inventore facilis qui cum
-                            odit. Molestiae praesentium ipsam saepe tenetur
-                            fugiat dolorem! Magni, fugit?{" "}
+                            {commentData.comment.comments}
                           </p>
+                          <hr />
                         </div>
                       </div>
+
+                      ))}
+
+
                       <div id="button-wrapper">
                         <div id="update-button">
                           <button type="submit" className="btn-outline-success">
@@ -99,7 +108,7 @@ class MstoryDetail extends Component {
                     </div>
                     <div id="topic-catagories">
                       <div className="topic-category">
-                        <a href="#">
+                      login                        <a href="#">
                           <p>EDUCATION</p>
                         </a>
                       </div>
@@ -140,4 +149,12 @@ class MstoryDetail extends Component {
   }
 }
 
-export default MstoryDetail;
+const mapStateToProps = state => ({
+  isAuthenticated : state.auth.isAuthenticated,
+  token : state.auth.token,
+  post_detail : state.post.post_detail,
+  comment : state.comment.comments_by_post_id
+
+})
+
+export default connect(mapStateToProps,{login,fetchDataPostById,fetchDataCommentsByPostId})(MstoryDetail)

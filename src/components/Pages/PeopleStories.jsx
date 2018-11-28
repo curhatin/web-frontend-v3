@@ -31,7 +31,7 @@ class PeopleStories extends Component {
           <UserNavbar />
 
           { this.props.post_list && this.props.post_list.map((postData,index)=> (
-          <Pstories topic={postData.topic} post={postData.post} key={index} commentlength={postData[`posts-comments`].length} date={postData.createdAt} />
+          <Pstories id={postData.id} topic={postData.topic} post={postData.post} key={index} commentlength={postData[`posts-comments`].length} date={postData.createdAt} />
           ))}
         
       </div>

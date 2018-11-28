@@ -31,7 +31,7 @@ class Pstories extends Component {
                           <div id="comment-title">
                             <a href="#">
                               <h5>
-                                <Link to="/MyStoryDetail">
+                                <Link to={`/MyStoryDetail/${this.props.id}`}>
                                 <strong >{this.props.topic}</strong>
                                 </Link>
                               </h5>

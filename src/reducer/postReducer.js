@@ -1,5 +1,5 @@
 import {
-    ADD_CURHAT, FETCH_DATA_POST
+    ADD_CURHAT, FETCH_DATA_POST, FETCH_DATA_POST_BY_ID
 } from '../actions/types'
 
 const initialState = {
@@ -19,6 +19,12 @@ export default function(state = initialState, action){
             return {
                 ...state,
                 post_list: action.payload
+            }
+            case FETCH_DATA_POST_BY_ID : 
+            console.log(action.payload)
+            return {
+                ...state,
+                post_detail : action.payload
             }
             default:
             return state

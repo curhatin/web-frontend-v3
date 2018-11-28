@@ -26,7 +26,8 @@ const store = createStore(
     initialState,
     compose(applyMiddleware(...middleware),
     // applyMiddleware(reduxHistoryPush),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
 )
 
 export default store

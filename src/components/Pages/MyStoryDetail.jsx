@@ -3,6 +3,7 @@ import Navbar from '../MainComponents/Navbar/Navbar';
 import UserNavbar from '../MainComponents/UserNavbar/UserNavbar';
 import MstoryDetail from '../MainComponents/MstoryDetail/MstoryDetail';
 
+
 class MyStoryDetail extends Component {
     constructor(props) {
         super(props);
@@ -13,7 +14,7 @@ class MyStoryDetail extends Component {
         <div>
             <Navbar />
             <UserNavbar />
-            <MstoryDetail />
+            <MstoryDetail id={this.props.match.params.id}/>
 
         </div>
              );
